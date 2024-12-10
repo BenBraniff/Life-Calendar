@@ -8,6 +8,7 @@ h1 {
 }
 
 body * {
+  font-family: 'Lucida Console', monospace;
   text-align: center;
   justify-content: "center";
 }
