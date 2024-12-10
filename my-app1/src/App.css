@@ -2,9 +2,17 @@
   text-align: center;
 }
 
-body {
+h1 {
+  font-size: 60px;
+}
+
+body * {
   text-align: center;
   justify-content: "center";
+}
+
+table {
+  margin: auto;
 }
 
 .squares {

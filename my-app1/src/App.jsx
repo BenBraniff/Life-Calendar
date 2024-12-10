@@ -3,11 +3,19 @@ import './App.css';
 
 function App() {
 
-  let myBirthday = new Date('2024-12-10');
-  
+  let myBirthday = new Date('May 14, 2004 00:00:00');
+  let birthdayMillis = Date.parse(myBirthday);
+  const currentTimeMillis = Date.now();
+  const secondsAlive = (currentTimeMillis - birthdayMillis) / (1000);
+  const minutesAlive = secondsAlive / 60;
+  const hoursAlive = minutesAlive / 60;
+  const daysAlive = hoursAlive / 24;
+  const weeksAlive = daysAlive / 7;
+  const yearsAlive = daysAlive / 365;
   const rows = 90;
   const columns = 52;
-  const targetIndex = 100;
+
+  console.log(secondsAlive);
 
   const gridStyle = {
     justifyContent: "center",
@@ -23,7 +31,7 @@ function App() {
       style={{
         width: "10px",
         height: "10px",
-        backgroundColor: index <= targetIndex ? "black" : "lightgray",
+        backgroundColor: index <= weeksAlive ? "black" : "lightgray",
       }}
     ></div>
   ));
@@ -32,6 +40,13 @@ function App() {
     <body>
       <h1>Life Calander</h1>
       <h2>by: Ben Braniff</h2>
+      <table>
+        <tr>Birthday: {myBirthday.toString()}</tr>
+        <tr>hours Alive: {Math.round(hoursAlive * 100)/100}</tr>
+        <tr>days Alive: {Math.round(daysAlive * 100)/100}</tr>
+        <tr>weeks Alive: {Math.round(weeksAlive * 100)/100}</tr>
+        <tr>years Alive: {Math.round(yearsAlive * 100)/100}</tr>
+      </table>
       <div style={gridStyle}>{squares}</div>
     </body>
   );
