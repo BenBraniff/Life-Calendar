@@ -17,6 +17,11 @@ table {
   margin: auto;
 }
 
+td {
+  text-align: left;
+  padding-left: 10px;
+}
+
 .squares {
   background-color: black;
 }

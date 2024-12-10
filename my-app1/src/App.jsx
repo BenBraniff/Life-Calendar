@@ -106,14 +106,14 @@ function App() {
       <h2>by: Ben Braniff</h2>
       <table>
         <tbody>
-        <tr><td>Birthday: {myBirthday.toString()}</td></tr>
-        <tr><td>Current : {currentTime}</td></tr>
-        <tr><td>Seconds Alive : {currentSeconds}</td></tr>
-        <tr><td>Minutes Alive : {currentMinutes}</td></tr>
-        <tr><td>Hours Alive: {currentHours}</td></tr>
-        <tr><td>Days Alive: {currentDays}</td></tr>
-        <tr><td>Weeks Alive: {currentWeeks}</td></tr>
-        <tr><td>Years Alive: {currentYears}</td></tr>
+        <tr><td>Birthday: </td><td>{myBirthday.toString()}</td></tr>
+        <tr><td>Current:</td><td> {currentTime}</td></tr>
+        <tr><td>Seconds Alive: </td><td>{currentSeconds}</td></tr>
+        <tr><td>Minutes Alive: </td><td>{currentMinutes}</td></tr>
+        <tr><td>Hours Alive: </td><td>{currentHours}</td></tr>
+        <tr><td>Days Alive: </td><td>{currentDays}</td></tr>
+        <tr><td>Weeks Alive: </td><td>{currentWeeks}</td></tr>
+        <tr><td>Years Alive: </td><td>{currentYears}</td></tr>
         </tbody>
       </table>
       <div style={containerStyle}>
