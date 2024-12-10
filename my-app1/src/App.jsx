@@ -101,18 +101,20 @@ function App() {
   ));
 
   return (
-    <body>
+      <div>
       <h1>Life Calander</h1>
       <h2>by: Ben Braniff</h2>
       <table>
-        <tr>Birthday: {myBirthday.toString()}</tr>
-        <tr>Current : {currentTime}</tr>
-        <tr>Seconds Alive : {currentSeconds}</tr>
-        <tr>Minutes Alive : {currentMinutes}</tr>
-        <tr>Hours Alive: {currentHours}</tr>
-        <tr>Days Alive: {currentDays}</tr>
-        <tr>Weeks Alive: {currentWeeks}</tr>
-        <tr>Years Alive: {currentYears}</tr>
+        <tbody>
+        <tr><td>Birthday: {myBirthday.toString()}</td></tr>
+        <tr><td>Current : {currentTime}</td></tr>
+        <tr><td>Seconds Alive : {currentSeconds}</td></tr>
+        <tr><td>Minutes Alive : {currentMinutes}</td></tr>
+        <tr><td>Hours Alive: {currentHours}</td></tr>
+        <tr><td>Days Alive: {currentDays}</td></tr>
+        <tr><td>Weeks Alive: {currentWeeks}</td></tr>
+        <tr><td>Years Alive: {currentYears}</td></tr>
+        </tbody>
       </table>
       <div style={containerStyle}>
         {/* Column labels */}
@@ -123,7 +125,7 @@ function App() {
         {/* Grid with row labels */}
         {gridWithRowLabels}
       </div>
-    </body>
+      </div>
   );
 };
 
