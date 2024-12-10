@@ -86,7 +86,7 @@ function App() {
   const gridWithRowLabels = Array.from({ length: rows }, (_, rowIndex) => (
     <div key={rowIndex} style={{ display: "flex", alignItems: "center" }}>
       <div style={{ width: "20px", textAlign: "center", fontSize: "10px" }}>
-        {rowIndex + 1}
+        {rowIndex}
       </div>
       <div
         style={{
