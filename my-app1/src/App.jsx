@@ -2,6 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  let myBirthday = new Date('2024-12-10');
+  
+
   return (
     <div className="App">
       <header className="App-header">
