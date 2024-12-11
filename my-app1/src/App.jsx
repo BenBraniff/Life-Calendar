@@ -3,12 +3,13 @@
 
   function App() {
 
-    let myBirthday = new Date('May 14, 2004 00:00:00');
+    let myBirthday = new Date('May 14 2004 00:00:00 GMT-0400');
     let birthdayMillis = Date.parse(myBirthday);
+
 
     const [currentTime, setCurrentTime] = useState(      new Date(Date.now()).toString());
     const [currentSeconds, setCurrentSeconds] = useState(Math.round(((Date.now() - birthdayMillis) / (1000))));
-    const [currentMinutes, setCurrentMinutes] = useState(Math.round(((Date.now() - birthdayMillis) / (1000*60))));
+    const [currentMinutes, setCurrentMinutes] = useState(Math.round(((Date.now() - birthdayMillis) / (1000*60))*10)/10);
     const [currentHours, setCurrentHours] = useState(    Math.round(((Date.now() - birthdayMillis) / (1000*60*60))*100)/100);
     const [currentDays, setCurrentDays] = useState(      Math.round(((Date.now() - birthdayMillis) / (1000*60*60*24))*100)/100);
     const [currentWeeks, setCurrentWeeks] = useState(    Math.round(((Date.now() - birthdayMillis) / (1000*60*60*24*7))*100)/100);
@@ -18,7 +19,7 @@
       const interval = setInterval(() => {
         setCurrentTime(   new Date(Date.now()).toString());
         setCurrentSeconds(Math.round(((Date.now() - birthdayMillis) / (1000))));
-        setCurrentMinutes(Math.round(((Date.now() - birthdayMillis) / (1000*60))));
+        setCurrentMinutes(Math.round(((Date.now() - birthdayMillis) / (1000*60))*10)/10);
         setCurrentHours(  Math.round(((Date.now() - birthdayMillis) / (1000*60*60))*100)/100);
         setCurrentDays(   Math.round(((Date.now() - birthdayMillis) / (1000*60*60*24))*100)/100);
         setCurrentWeeks(  Math.round(((Date.now() - birthdayMillis) / (1000*60*60*24*7))*100)/100);
@@ -117,7 +118,7 @@
         <table>
           <tbody>
           <tr><td>Birthday: </td><td>{myBirthday.toString()}</td></tr>
-          <tr><td>Current:</td><td> {currentTime}</td></tr>
+          <tr><td>Current Time:</td><td> {currentTime}</td></tr>
           <tr><td>Seconds Alive: </td><td>{currentSeconds}</td></tr>
           <tr><td>Minutes Alive: </td><td>{currentMinutes}</td></tr>
           <tr><td>Hours Alive: </td><td>{currentHours}</td></tr>
