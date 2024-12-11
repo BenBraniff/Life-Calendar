@@ -59,20 +59,34 @@
       </div>
     ));
 
-    const squareStyle = (whatColor) => {
-      let theColor;
-      switch (whatColor) {
+    const squareStyle = (theIndex) => {
+      // 255*255*255 = 16,777,216
+      // 90 * 52 = 4,680 (index)
+      // 16,777,216 / 4,680 = 3584.87521368 ~= 3584
+      // index * 3584 then convert to hex
+      let ColorCode = "#" + (theIndex * 3584).toString(15);
+      
+      let isColored = 0;
+      let theColor = "lightgray";
+      if (theIndex < currentWeeks) {
+        isColored = 0;
+      } else if (theIndex == Math.round(currentWeeks)) {
+        isColored = 1;
+      } else {
+        isColored = 2;
+      }
+      switch (isColored) {
         case 0:
           theColor = "black";
           break;
         case 1:
-          theColor = "lightgray";
-          break;
-        case 2:
           theColor = "green";
           break;
+        case 2:
+          theColor = "lightgray";
+          break;
         default:
-          theColor = "transparent";
+          theColor = "lightgray";
       }
       return {
         width: "15px",
@@ -83,15 +97,7 @@
     
 
     const squares = Array.from({ length: rows * columns }, (_, index) => {
-      let isColored = 0; // Use let instead of const
-      if (index < currentWeeks) {
-        isColored = 0;
-      } else if (index == Math.round(currentWeeks)) {
-        isColored = 2;
-      } else {
-        isColored = 1;
-      }
-      return <div key={index} style={squareStyle(isColored)}></div>;
+      return <div key={index} style={squareStyle(index)}></div>;
     });
 
     const gridWithRowLabels = Array.from({ length: rows }, (_, rowIndex) => (
