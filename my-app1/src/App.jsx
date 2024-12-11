@@ -70,10 +70,8 @@ function App() {
     return () => clearInterval(interval); // Clean up interval on unmount
   }, []);
 
-  const [colorWaysSelect, setcolorWaysSelect] = useState("0");
-  // colorWaysSelect.addEventListener('change', () => {
-  //     selectedValue = colorWaysSelect.value;
-  // });
+  const [colorBodySelect, setcolorBodySelect] = useState("0");
+  const [colorHeadSelect, setcolorHeadSelect] = useState("0");
 
   const rows = 90;
   const columns = 52;
@@ -108,56 +106,41 @@ function App() {
 
   const squareStyle = (theIndex) => {
     let theColor = "lightgray";
-    let choice = parseInt(colorWaysSelect, 10);
-    switch (choice) {
-      case 0: {
-        let isColored = 0;
-        if (theIndex < currentWeeks) {
-          isColored = 0;
-        } else if (theIndex == Math.round(currentWeeks)) {
-          isColored = 1;
-        } else {
-          isColored = 2;
-        }
-        switch (isColored) {
-          case 0:
-            theColor = "black";
-            break;
-          case 1:
-            theColor = "green";
-            break;
-          case 2:
-            theColor = "lightgray";
-            break;
-          default:
-            theColor = "lightgray";
-        }
-        break;
-      }
-      case 1: {
-        let isColored = 0;
-        if (theIndex < currentWeeks) {
-          theColor = hsvToHex( theIndex / currentWeeks * 360, 1, 1);
-        } else if (theIndex == Math.round(currentWeeks)) {
-          theColor = "white";
-        } else {
-          isColored = "lightgray";
-        }
-        break;
-      }
-      case 2: {
-        // 90 * 52 = 4,680 (total number of squares)
-        let isColored = 0;
-        if (theIndex < currentWeeks) {
-          theColor = hsvToHex( theIndex / 4680 * 360, 1, 1);
-        } else if (theIndex == Math.round(currentWeeks)) {
+    let Bodychoice = parseInt(colorBodySelect, 10);
+    let Headchoice = parseInt(colorHeadSelect, 10);
+    let isColored = 0;
+    if (theIndex < currentWeeks) {
+      switch (Bodychoice) {
+        case 0:
           theColor = "black";
-        } else {
-          isColored = "lightgray";
-        }
+          break;
+        case 1:
+          theColor = theColor = hsvToHex( theIndex / currentWeeks * 360, 1, 1);
+          break;
+        case 2:
+          theColor = hsvToHex( theIndex / 4680 * 360, 1, 1);
+          break;
+      }
+    } else if (theIndex == Math.round(currentWeeks)) {
+      switch(Headchoice) {
+        case 0:
+          theColor = "red";
+          break;
+        case 1:
+          theColor = "green";
+          break;
+        case 2:
+          theColor = "blue";
+          break;
+        case 3:
+        theColor = "lightgray";
         break;
       }
+    } else {
+      theColor = "lightgray";
     }
+    
+    
     return {
       width: "15px",
       height: "15px",
@@ -201,15 +184,26 @@ function App() {
         <tr><td>Days Alive: </td><td>{currentDays}</td></tr>
         <tr><td>Weeks Alive: </td><td>{currentWeeks}</td></tr>
         <tr><td>Years Alive: </td><td>{currentYears}</td></tr>
-        <tr><td>Color Way: </td>
+        <tr><td>Color Body: </td>
             <td><select
-            name="colorWays"
-            id="colorWays"
-            value={colorWaysSelect}
-            onChange={(e) => setcolorWaysSelect(e.target.value)}>
-                  <option value="0">Basic</option>
+            name="colorBody"
+            id="colorBody"
+            value={colorBodySelect}
+            onChange={(e) => setcolorBodySelect(e.target.value)}>
+                  <option value="0">Black</option>
                   <option value="1">Full Rainbow</option>
                   <option value="2">Part Rainbow</option>
+                </select></td></tr>
+        <tr><td>Color Head: </td>
+            <td><select
+            name="colorHead"
+            id="colorHead"
+            value={colorHeadSelect}
+            onChange={(e) => setcolorHeadSelect(e.target.value)}>
+                  <option value="0">Red</option>
+                  <option value="1">Green</option>
+                  <option value="2">Blue</option>
+                  <option value="3">Lightgray</option>
                 </select></td></tr>
         </tbody>
       </table>
