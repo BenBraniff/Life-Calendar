@@ -121,7 +121,7 @@ function App() {
           theColor = hsvToHex( theIndex / 4680 * 360, 1, 1);
           break;
       }
-    } else if (theIndex == Math.round(currentWeeks)) {
+    } else if (theIndex == Math.ceil(currentWeeks)) {
       switch(Headchoice) {
         case 0:
           theColor = "red";
