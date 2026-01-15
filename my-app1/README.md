@@ -75,3 +75,7 @@ npm init react-app my-app --template typescript --force
 cd my-app
 npm start
 but the typscript stuff didn't work
+
+
+Here is the photo
+![Test Photo](../Screenshot%202026-01-15%20at%2012.51.19.pngScreenshot 2026-01-15 at 12.51.19.png)
