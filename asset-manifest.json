@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Life-Calendar/static/css/main.223057fc.css",
+    "main.js": "/Life-Calendar/static/js/main.f09a60de.js",
+    "static/js/453.fc054035.chunk.js": "/Life-Calendar/static/js/453.fc054035.chunk.js",
+    "index.html": "/Life-Calendar/index.html",
+    "main.223057fc.css.map": "/Life-Calendar/static/css/main.223057fc.css.map",
+    "main.f09a60de.js.map": "/Life-Calendar/static/js/main.f09a60de.js.map",
+    "453.fc054035.chunk.js.map": "/Life-Calendar/static/js/453.fc054035.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.223057fc.css",
+    "static/js/main.f09a60de.js"
+  ]
+}
