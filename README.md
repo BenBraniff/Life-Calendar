@@ -1,5 +1,9 @@
 # Life Calendar
 
+View this project here...
+
+https://benbraniff.github.io/Life-Calendar/
+
 The inspiration for this project comes from a poster I used to keep in my room. It consisted of a grid of squares roughly 1 cm by 1 cm in size. Each square represents a week of life lived. Each row represents a year of life lived, and so, there are 52 columns (52 weeks in a year).
 
 ![Poster 1](/InstagramPost_31_1.jpg)
